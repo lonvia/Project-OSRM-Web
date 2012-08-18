@@ -61,7 +61,7 @@ init: function() {
 	// [nothing to be done at the moment]
 	
 	// tooltip timers
-	var tooltips = OSRM.GUI.tooltips;
+	/*var tooltips = OSRM.GUI.tooltips;
 	for( id in tooltips ) {
 		// start timer
 		tooltips[id]._timer = setTimeout(
@@ -71,7 +71,7 @@ init: function() {
 		
 		// mark tooltip as pending
 		tooltips[id]._pending = true;
-	}
+	}*/
 },
 
 

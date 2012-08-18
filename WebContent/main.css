@@ -685,3 +685,17 @@ input[type=checkbox],
 	font-size: 9px;
 	font-weight: normal;
 }
+
+/* ------------------------------------------------------------------------- */
+
+.routing-mode-switcher {
+    padding : 1px 0.5em;
+    background-color: #EEEEEE;
+    cursor: pointer
+}
+
+.routing-mode-enabled {
+    background-color: #24203D;
+    color: #FFFFFF;
+    cursor: default;
+}

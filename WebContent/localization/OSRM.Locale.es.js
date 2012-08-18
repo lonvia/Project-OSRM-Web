@@ -31,7 +31,7 @@ OSRM.Localization["es"] = {
 "GUI_REVERSE": "Invertir",
 "GUI_START_TOOLTIP": "Escriba la dirección de origen",
 "GUI_END_TOOLTIP": "Escriba la dirección de destino",
-"GUI_LEGAL_NOTICE": "GUI2 v"+OSRM.VERSION+" "+OSRM.DATE+" - OSRM alojado en <a href='http://algo2.iti.kit.edu/'>KIT</a> - Geocoder gracias a <a href='http://www.osm.org/'>OSM</a>",
+"GUI_LEGAL_NOTICE": "routing powered by <a href='http://http://project-osrm.org'>OSRM</a> - GUI based on <a href='https://github.com/DennisSchiefer/Project-OSRM-Web'>OSRM Webinterface</a> - Geocoding by <a href='http://wiki.openstreetmap.org/wiki/Nominatim'>Nominatim</a>",
 // config
 "GUI_CONFIGURATION": "Configuración",
 "GUI_LANGUAGE": "Idioma",

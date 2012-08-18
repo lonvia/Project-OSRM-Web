@@ -31,7 +31,7 @@ OSRM.Localization["lv"] = {
 "GUI_REVERSE": "Pretējā&nbsp;virzienā",
 "GUI_START_TOOLTIP": "Izvēlieties sākumu",
 "GUI_END_TOOLTIP": "Izvēlieties galamērķi",
-"GUI_LEGAL_NOTICE": "GUI2 v"+OSRM.VERSION+" "+OSRM.DATE+" - OSRM hosting by <a href='http://algo2.iti.kit.edu/'>KIT</a> - Geocoder by <a href='http://www.osm.org/'>OSM</a>",
+"GUI_LEGAL_NOTICE": "routing powered by <a href='http://http://project-osrm.org'>OSRM</a> - GUI based on <a href='https://github.com/DennisSchiefer/Project-OSRM-Web'>OSRM Webinterface</a> - Geocoding by <a href='http://wiki.openstreetmap.org/wiki/Nominatim'>Nominatim</a>",
 // config
 "GUI_CONFIGURATION": "Konfigurācija",
 "GUI_LANGUAGE": "Valoda",

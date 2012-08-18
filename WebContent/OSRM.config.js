@@ -18,18 +18,35 @@ or see http://www.gnu.org/licenses/agpl.txt.
 // OSRM config file
 // [has to be loaded directly after OSRM.base]
 
+var routingHost = '192.168.13.37';
+var websiteURL = 'http://osrm.zephyria'
+
 OSRM.DEFAULTS = {
-	HOST_ROUTING_URL: 'http://router.project-osrm.org/viaroute',
-	HOST_SHORTENER_URL: 'http://map.project-osrm.org/shorten/',
-	HOST_TIMESTAMP_URL: 'http://router.project-osrm.org/timestamp',
+	PROFILES : {
+		"car" : {
+			HOST_ROUTING_URL: 'http://' + routingHost + ':3330/viaroute',
+			HOST_TIMESTAMP_URL: 'http://' + routingHost + ':3330/timestamp'
+		},
+		"bike" : {
+			HOST_ROUTING_URL: 'http://' + routingHost + ':3331/viaroute',
+			HOST_TIMESTAMP_URL: 'http://' + routingHost + ':3331/timestamp'
+		},
+		"foot" : {
+			HOST_ROUTING_URL: 'http://' + routingHost + ':3333/viaroute',
+			HOST_TIMESTAMP_URL: 'http://' + routingHost + ':3333/timestamp'
+		}
+			   },
+	HOST_ROUTING_URL: 'http://' + routingHost + ':3330/viaroute',
+	HOST_TIMESTAMP_URL: 'http://' + routingHost + ':3330/timestamp',
+	HOST_SHORTENER_URL: websiteURL + '/shorten/',
 	HOST_GEOCODER_URL: 'http://nominatim.openstreetmap.org/search',
 	HOST_REVERSE_GEOCODER_URL: 'http://nominatim.openstreetmap.org/reverse',
 	WEBSITE_URL: document.URL.replace(/#*(\?.*|$)/i,""),					// truncates URL before first ?, and removes tailing #
 	JSONP_TIMEOUT: 10000,
 	ZOOM_LEVEL: 14,
-	ONLOAD_ZOOM_LEVEL: 5,
-	ONLOAD_LATITUDE: 48.84,
-	ONLOAD_LONGITUDE: 10.10,
+	ONLOAD_ZOOM_LEVEL: 14,
+	ONLOAD_LATITUDE: 47.00,
+	ONLOAD_LONGITUDE: 7.70,
 	ONLOAD_SOURCE: "",
 	ONLOAD_TARGET: "",
 	HIGHLIGHT_ZOOM_LEVEL: 16,
@@ -45,14 +62,8 @@ OSRM.DEFAULTS = {
 	LANGUAGE_SUPPORTED: [ 
 		{encoding:"en", name:"English"},
 		{encoding:"de", name:"Deutsch"},
-		{encoding:"dk", name:"Dansk"},
-		{encoding:"es", name:"Español"},
-		{encoding:"fi", name:"Suomi"},
 		{encoding:"fr", name:"Français"},
-		{encoding:"it", name:"Italiano"},
-		{encoding:"lv", name:"Latviešu"},
-		{encoding:"pl", name:"Polski", culture:"en-US"},
-		{encoding:"ru", name:"Русский"}
+		{encoding:"it", name:"Italiano"}
 	],
 		
 	TILE_SERVERS: [
@@ -70,7 +81,7 @@ OSRM.DEFAULTS = {
 			url:'http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
 			attribution:'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 MapQuest',
 			options:{maxZoom: 18, subdomains: '1234'}
-		},
+		}/*,
 		{	display_name: 'CloudMade',
 			url:'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png',
 			attribution:'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
@@ -89,7 +100,7 @@ OSRM.DEFAULTS = {
 			type:"Aerial",
 			options:{minZoom: 1},
 			bing:true,
-		}
+		}*/
 	],
 	
 	MAINTENANCE: false,
