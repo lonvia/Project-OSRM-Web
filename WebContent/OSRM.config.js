@@ -55,9 +55,9 @@ OSRM.DEFAULTS = {
 	HIGHLIGHT_ZOOM_LEVEL: 16,
 	JSONP_TIMEOUT: 10000,
 	
-	ONLOAD_ZOOM_LEVEL: 5,
-	ONLOAD_LATITUDE: 48.84,
-	ONLOAD_LONGITUDE: 10.10,
+	ONLOAD_ZOOM_LEVEL: 9,
+	ONLOAD_LATITUDE: 47.20,
+	ONLOAD_LONGITUDE: 8.50,
 	ONLOAD_SOURCE: "",
 	ONLOAD_TARGET: "",
 	
@@ -65,22 +65,9 @@ OSRM.DEFAULTS = {
 	LANUGAGE_ONDEMAND_RELOADING: true,
 	LANGUAGE_SUPPORTED: [ 
 		{encoding:"en", name:"English"},
-		{encoding:"bg", name:"Български"},
-		{encoding:"cs", name:"Česky"},
 		{encoding:"de", name:"Deutsch"},
-		{encoding:"dk", name:"Dansk"},
-		{encoding:"es", name:"Español"},
-		{encoding:"fi", name:"Suomi"},
 		{encoding:"fr", name:"Français"},
-		{encoding:"it", name:"Italiano"},
-		{encoding:"ja", name:"日本人"},
-		{encoding:"lv", name:"Latviešu"},
-		{encoding:"pl", name:"Polski"},
-		{encoding:"pt", name:"Portugues"},
-		{encoding:"ro", name:"Română"},
-		{encoding:"ru", name:"Русский"},
-		{encoding:"sv", name:"Svenska"},
-		{encoding:"tr", name:"Türkçe"}
+		{encoding:"it", name:"Italiano"}
 	],
 		
 	TILE_SERVERS: [
@@ -93,35 +80,13 @@ OSRM.DEFAULTS = {
 			url:'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
 			attribution:'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 Mapnik',
 			options:{maxZoom: 18}
-		},
-		{	display_name: 'MapQuest',
-			url:'http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
-			attribution:'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 MapQuest',
-			options:{maxZoom: 18, subdomains: '1234'}
-		},
-		{	display_name: 'CloudMade',
-			url:'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png',
-			attribution:'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
-			options:{maxZoom: 18}
-		},
-		{
-			display_name: 'Bing Road',
-			apikey:'AjCb2f6Azv_xt9c6pl_xok96bgAYrXQNctnG4o07sTj4iS9N68Za4B3pRJyeCjGr',	// please use your own apikey (http://msdn.microsoft.com/en-us/library/ff428642.aspx) 
-			options:{type:"Road", minZoom: 1},
-			bing:true,
-		},
-		{
-			display_name: 'Bing Aerial',
-			apikey:'AjCb2f6Azv_xt9c6pl_xok96bgAYrXQNctnG4o07sTj4iS9N68Za4B3pRJyeCjGr',	// please use your own apikey (http://msdn.microsoft.com/en-us/library/ff428642.aspx)
-			options:{type:"Aerial", minZoom: 1},
-			bing:true,
 		}
 	],
 
 	NOTIFICATIONS: {
-		LOCALIZATION:	1800000,	// 30min
-		CLICKING: 		60000,		// 1min
-		DRAGGING: 		120000,		// 2min 
+		LOCALIZATION:	false,	// 30min
+		CLICKING: 		false,		// 1min
+		DRAGGING: 		false,		// 2min 
 		MAINTENANCE:	false
 	},
 	OVERRIDE_MAINTENANCE_NOTIFICATION_HEADER: undefined,

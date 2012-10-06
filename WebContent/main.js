@@ -110,7 +110,7 @@ OSRM.prefetchImages = function() {
 		              	{id:'direction_10',						url:'images/head.png'},
 		        		{id:'direction_11',						url:'images/round-about.png'},
 		        		{id:'direction_15',						url:'images/target.png'},
-		        		{id:'osrm-logo',						url:'images/osrm-logo.png'},
+		        		{id:'osrm-logo',						url:'images/osrm-ch.png'},
 		        		{id:'selector',							url:'images/selector.png'}
 	               ];
 		
