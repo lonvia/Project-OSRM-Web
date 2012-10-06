@@ -18,12 +18,25 @@ or see http://www.gnu.org/licenses/agpl.txt.
 // OSRM config file
 // [has to be loaded directly after OSRM.base]
 
+
+var routingHost = 'osm.lonvia.de';
+
 OSRM.DEFAULTS = {
 	ROUTING_ENGINES: [
-		{	url: 'http://router.project-osrm.org/viaroute',
-			timestamp: 'http://router.project-osrm.org/timestamp',
+		{	url: 'http://' + routingHost + ':3331/viaroute',
+            timestamp: 'http://' + routingHost + ':3331/timestamp',
 			metric: 0,
 			label: 'ENGINE_0',
+		},
+		{	url: 'http://' + routingHost + ':3332/viaroute',
+            timestamp: 'http://' + routingHost + ':3332/timestamp',
+			metric: 0,
+			label: 'ENGINE_1',
+		},
+		{	url: 'http://' + routingHost + ':3333/viaroute',
+            timestamp: 'http://' + routingHost + ':3333/timestamp',
+			metric: 0,
+			label: 'ENGINE_2',
 		}
 	],
 	
