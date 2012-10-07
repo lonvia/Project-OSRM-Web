@@ -132,7 +132,7 @@ OSRM.Localization["en"] = {
 									"<br/><br/>" +
 									"You can even create intermediate markers by dragging them off of the main route! ",
 // do not translate below this line
-"GUI_LEGAL_NOTICE": "routing powered by <a href='http://http://project-osrm.org'>OSRM</a> - GUI based on <a href='https://github.com/DennisSchiefer/Project-OSRM-Web'>OSRM Webinterface</a> - Geocoding by <a href='http://wiki.openstreetmap.org/wiki/Nominatim'>Nominatim</a>",
+"GUI_LEGAL_NOTICE": "routing powered by <a href='http://project-osrm.org'>OSRM</a> - GUI based on <a href='https://github.com/DennisSchiefer/Project-OSRM-Web'>OSRM Webinterface</a> - Geocoding by <a href='http://wiki.openstreetmap.org/wiki/Nominatim'>Nominatim</a>",
 "GUI_DATA_TIMESTAMP": "data: ",
 "GUI_VERSION": "gui: ",
 "QR": "QR"
