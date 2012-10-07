@@ -46,12 +46,22 @@ init: function() {
 		}
 		L.Util.stamp( base_maps[ tile_servers[i].display_name ] );			// stamp tile servers so that their order is correct in layers control
 	}
+    var initial_map = base_maps[tile_servers[0].display_name];
+
+	// setup overlay servers
+	tile_servers = OSRM.DEFAULTS.OVERLAY_SERVERS;
+	var overlay_maps = {};
+	for(var i=0, size=tile_servers.length; i<size; i++) {
+		tile_servers[i].options.attribution = tile_servers[i].attribution; 
+		overlay_maps[ tile_servers[i].display_name ] = new L.TileLayer( tile_servers[i].url, tile_servers[i].options );
+		L.Util.stamp( overlay_maps[ tile_servers[i].display_name ] );			// stamp tile servers so that their order is correct in layers control
+	}
 
 	// setup map
 	OSRM.G.map = new OSRM.Control.Map('map', {
     	center: new L.LatLng(OSRM.DEFAULTS.ONLOAD_LATITUDE, OSRM.DEFAULTS.ONLOAD_LONGITUDE),
 	    zoom: OSRM.DEFAULTS.ONLOAD_ZOOM_LEVEL,
-	    layers: [base_maps[tile_servers[0].display_name]],	    
+	    layers: [initial_map],
 	    zoomAnimation: false,								// animations have to be inactive during initialization (leaflet issue #918)
 	    fadeAnimation: false,
 	    zoomControl: false									// use OSRM zoom buttons
@@ -62,7 +72,7 @@ init: function() {
 	OSRM.G.map.locationsControl.addTo(OSRM.G.map);
 	
 	// add layer control
-	OSRM.G.map.layerControl = new OSRM.Control.Layers(base_maps, {});
+	OSRM.G.map.layerControl = new OSRM.Control.Layers(base_maps, overlay_maps);
 	OSRM.G.map.layerControl.addTo(OSRM.G.map);	
 
 	// add zoom control

@@ -41,7 +41,7 @@ OSRM.DEFAULTS = {
 	],
 	
 	WEBSITE_URL: document.URL.replace(/#*(\?.*|$)/i,""),					// truncates URL before first ?, and removes tailing #
-	HOST_GEOCODER_URL: 'http://nominatim.openstreetmap.org/search',
+	HOST_GEOCODER_URL: 'http://nominatim.openstreetmap.org/search?countrycodes=ch&',
 	HOST_REVERSE_GEOCODER_URL: 'http://nominatim.openstreetmap.org/reverse',
 	HOST_SHORTENER_URL: 'http://map.project-osrm.org/shorten/',
 	
@@ -82,6 +82,18 @@ OSRM.DEFAULTS = {
 			options:{maxZoom: 18}
 		}
 	],
+    OVERLAY_SERVERS: [
+        {  display_name: 'hiking routes',
+           url: 'http://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png',
+           attribution: 'Routes &copy; waymarkedtrails.org',
+			options:{maxZoom: 17}
+        },
+        {  display_name: 'bike routes',
+           url: 'http://tile.waymarkedtrails.org/cycling/{z}/{x}/{y}.png',
+           attribution: 'Routes &copy; waymarkedtrails.org',
+	       options:{maxZoom: 17}
+        }
+    ],
 
 	NOTIFICATIONS: {
 		LOCALIZATION:	false,	// 30min
