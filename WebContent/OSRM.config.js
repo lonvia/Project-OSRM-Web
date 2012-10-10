@@ -48,7 +48,7 @@ OSRM.DEFAULTS = {
 	SHORTENER_PARAMETERS: '%url&jsonp=%jsonp',
 	SHORTENER_REPLY_PARAMETER: 'ShortURL',	
 	
-	ROUTING_ENGINE: 0,
+	ROUTING_ENGINE: 1,
 	DISTANCE_FORMAT: 0,														// 0: km, 1: miles
 	GEOCODER_BOUNDS: '',	
 	ZOOM_LEVEL: 14,
@@ -73,12 +73,12 @@ OSRM.DEFAULTS = {
 	TILE_SERVERS: [
 		{	display_name: 'osm.org',
 			url:'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-			attribution:'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 Mapnik',
+			attribution:'Map data &copy; 2011 OpenStreetMap contributors under <a ref="http://www.openstreetmap.org/copyright">ODbL</a>',
 			options:{maxZoom: 18}
 		},
 		{	display_name: 'osm.de',
 			url:'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
-			attribution:'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 Mapnik',
+			attribution:'Map data &copy; 2011 OpenStreetMap contributors under <a ref="http://www.openstreetmap.org/copyright">ODbL</a>',
 			options:{maxZoom: 18}
 		}
 	],
@@ -91,6 +91,11 @@ OSRM.DEFAULTS = {
         {  display_name: 'bike routes',
            url: 'http://tile.waymarkedtrails.org/cycling/{z}/{x}/{y}.png',
            attribution: 'Routes &copy; waymarkedtrails.org',
+	       options:{maxZoom: 17}
+        },
+        {  display_name: 'bike access restrictions',
+           url: 'http://ex4sy.t-i.ch/bicycle/{z}/{x}/{y}.png',
+           attribution: 'Access overlay by <a href="http://osm.t-i.ch/bicycle/map/">t-i.ch</a>',
 	       options:{maxZoom: 17}
         }
     ],
