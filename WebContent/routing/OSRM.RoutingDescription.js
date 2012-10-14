@@ -97,6 +97,12 @@ show: function(response) {
 
 	// create GPX link
 	var gpx_link = '[<a class="route-link" onClick="document.location.href=\'' + OSRM.G.active_routing_server_url + query_string + '&output=gpx\';">'+OSRM.loc("GPX_FILE")+'</a>]';
+
+    // recompute time, if necessay
+    if (OSRM.G.active_routing_fixspeed > 0) {
+        response.route_summary.total_time = 
+            response.route_summary.total_distance * 3.6 / OSRM.G.active_routing_fixspeed;
+    }
 	
 	// check highlight marker to get id of corresponding description
 	// [works as changing language or metric does not remove the highlight marker!]	

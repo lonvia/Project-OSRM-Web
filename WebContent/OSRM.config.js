@@ -27,16 +27,19 @@ OSRM.DEFAULTS = {
             timestamp: 'http://' + routingHost + ':3331/timestamp',
 			metric: 0,
 			label: 'ENGINE_0',
+            fixspeed: 0
 		},
 		{	url: 'http://' + routingHost + ':3332/viaroute',
             timestamp: 'http://' + routingHost + ':3332/timestamp',
 			metric: 0,
 			label: 'ENGINE_1',
+            fixspeed: 18
 		},
 		{	url: 'http://' + routingHost + ':3333/viaroute',
             timestamp: 'http://' + routingHost + ':3333/timestamp',
 			metric: 0,
 			label: 'ENGINE_2',
+            fixspeed: 4.5
 		}
 	],
 	

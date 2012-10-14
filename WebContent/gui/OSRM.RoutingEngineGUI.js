@@ -41,6 +41,7 @@ setRoutingEngine: function(engine) {
 	OSRM.G.active_routing_metric = OSRM.DEFAULTS.ROUTING_ENGINES[ OSRM.G.active_routing_engine ].metric;;
 	OSRM.G.active_routing_server_url = OSRM.DEFAULTS.ROUTING_ENGINES[ OSRM.G.active_routing_engine ].url;
 	OSRM.G.active_routing_timestamp_url = OSRM.DEFAULTS.ROUTING_ENGINES[ OSRM.G.active_routing_engine ].timestamp;
+	OSRM.G.active_routing_fixspeed = OSRM.DEFAULTS.ROUTING_ENGINES[ OSRM.G.active_routing_engine ].fixspeed;
 	
 	// requery data timestamp
 	OSRM.GUI.queryDataTimestamp();
