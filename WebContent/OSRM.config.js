@@ -40,6 +40,12 @@ OSRM.DEFAULTS = {
 			metric: 0,
 			label: 'ENGINE_2',
             fixspeed: 4.5
+        },
+		{	url: 'http://' + routingHost + ':3334/viaroute',
+            timestamp: 'http://' + routingHost + ':3334/timestamp',
+			metric: 0,
+			label: 'ENGINE_3',
+            fixspeed: 4.5
 		}
 	],
 	
