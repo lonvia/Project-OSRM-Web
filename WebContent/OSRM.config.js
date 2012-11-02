@@ -19,30 +19,34 @@ or see http://www.gnu.org/licenses/agpl.txt.
 // [has to be loaded directly after OSRM.base]
 
 
-var routingHost = 'osm.lonvia.de';
-
 OSRM.DEFAULTS = {
 	ROUTING_ENGINES: [
-		{	url: 'http://' + routingHost + ':3331/viaroute',
-            timestamp: 'http://' + routingHost + ':3331/timestamp',
+		{	url: '/routed-car/viaroute',
+            timestamp: '/routed-car/timestamp',
 			metric: 0,
 			label: 'ENGINE_0',
             fixspeed: 0
 		},
-		{	url: 'http://' + routingHost + ':3332/viaroute',
-            timestamp: 'http://' + routingHost + ':3332/timestamp',
+		{	url: '/routed-bike/viaroute',
+            timestamp: '/routed-bike/timestamp',
 			metric: 0,
 			label: 'ENGINE_1',
             fixspeed: 18
 		},
-		{	url: 'http://' + routingHost + ':3333/viaroute',
-            timestamp: 'http://' + routingHost + ':3333/timestamp',
+		{	url: '/routed-bike-touring/viaroute',
+            timestamp: '/routed-bike-touring/timestamp',
+			metric: 0,
+			label: 'ENGINE_4',
+            fixspeed: 18
+		},
+		{	url: '/routed-foot/viaroute',
+            timestamp: '/routed-foot/timestamp',
 			metric: 0,
 			label: 'ENGINE_2',
             fixspeed: 4.5
         },
-		{	url: 'http://' + routingHost + ':3334/viaroute',
-            timestamp: 'http://' + routingHost + ':3334/timestamp',
+		{	url: '/routed-hiking/viaroute',
+            timestamp: '/routed-hiking/timestamp',
 			metric: 0,
 			label: 'ENGINE_3',
             fixspeed: 4.5
