@@ -32,9 +32,9 @@ init: function() {
 	// init additional boxes
 	var option_group = new OSRM.GUIBoxGroup();
 	var config_handle = new OSRM.GUIBoxHandle("config", "right", "right:-5px;bottom:70px;");
-	var mapping_handle = new OSRM.GUIBoxHandle("mapping", "right", "right:-5px;bottom:25px;");
+	//var mapping_handle = new OSRM.GUIBoxHandle("mapping", "right", "right:-5px;bottom:25px;");
 	option_group.add( config_handle );
-	option_group.add( mapping_handle );
+	//option_group.add( mapping_handle );
 	option_group.select( null );
 	
 	// init starting source/target
@@ -47,12 +47,12 @@ init: function() {
 
 // set language dependent labels
 setLabels: function() {
-	document.getElementById("open-josm").innerHTML = OSRM.loc("OPEN_JOSM");
-	document.getElementById("open-osmbugs").innerHTML = OSRM.loc("OPEN_OSMBUGS");
+	//document.getElementById("open-josm").innerHTML = OSRM.loc("OPEN_JOSM");
+	//document.getElementById("open-osmbugs").innerHTML = OSRM.loc("OPEN_OSMBUGS");
 	document.getElementById("gui-reset").innerHTML = OSRM.loc("GUI_RESET");
 	document.getElementById("gui-reverse").innerHTML = OSRM.loc("GUI_REVERSE");
-	document.getElementById("gui-option-highlight-nonames-label").lastChild.nodeValue = OSRM.loc("GUI_HIGHLIGHT_UNNAMED_ROADS");
-	document.getElementById("gui-option-show-previous-routes-label").lastChild.nodeValue = OSRM.loc("GUI_SHOW_PREVIOUS_ROUTES");
+	//document.getElementById("gui-option-highlight-nonames-label").lastChild.nodeValue = OSRM.loc("GUI_HIGHLIGHT_UNNAMED_ROADS");
+	//document.getElementById("gui-option-show-previous-routes-label").lastChild.nodeValue = OSRM.loc("GUI_SHOW_PREVIOUS_ROUTES");
 	document.getElementById("gui-search-source").innerHTML = OSRM.loc("GUI_SEARCH");
 	document.getElementById("gui-search-target").innerHTML = OSRM.loc("GUI_SEARCH");
 	document.getElementById("gui-search-source-label").innerHTML = OSRM.loc("GUI_START")+":";
@@ -60,7 +60,7 @@ setLabels: function() {
 	document.getElementById("gui-input-source").title = OSRM.loc("GUI_START_TOOLTIP");
 	document.getElementById("gui-input-target").title = OSRM.loc("GUI_END_TOOLTIP");
 	document.getElementById("legal-notice").innerHTML = OSRM.loc("GUI_LEGAL_NOTICE");
-	document.getElementById("gui-mapping-label").innerHTML = OSRM.loc("GUI_MAPPING_TOOLS");
+	//document.getElementById("gui-mapping-label").innerHTML = OSRM.loc("GUI_MAPPING_TOOLS");
 	document.getElementById("gui-config-label").innerHTML = OSRM.loc("GUI_CONFIGURATION");
 	document.getElementById("gui-language-2-label").innerHTML = OSRM.loc("GUI_LANGUAGE")+":";
 	document.getElementById("gui-units-label").innerHTML = OSRM.loc("GUI_UNITS")+":";
@@ -69,7 +69,7 @@ setLabels: function() {
 	document.getElementById('gui-timestamp-label').innerHTML = OSRM.loc("GUI_VERSION");	
 	document.getElementById('gui-timestamp').innerHTML = OSRM.DATE+"; v"+OSRM.VERSION;	
 	document.getElementById('config-handle-icon').title = OSRM.loc("GUI_CONFIGURATION");
-	document.getElementById('mapping-handle-icon').title = OSRM.loc("GUI_MAPPING_TOOLS");
+	//document.getElementById('mapping-handle-icon').title = OSRM.loc("GUI_MAPPING_TOOLS");
 	document.getElementById('main-handle-icon').title = OSRM.loc("GUI_MAIN_WINDOW");
 	OSRM.G.map.zoomControl.setTooltips( OSRM.loc("GUI_ZOOM_IN"), OSRM.loc("GUI_ZOOM_OUT") );
 	OSRM.G.map.locationsControl.setTooltips( OSRM.loc("GUI_ZOOM_ON_USER"), OSRM.loc("GUI_ZOOM_ON_ROUTE") );

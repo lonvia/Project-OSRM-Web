@@ -37,10 +37,10 @@ init: function() {
 	
 	document.getElementById("gui-reset").onclick = OSRM.GUI.resetRouting;
 	document.getElementById("gui-reverse").onclick = OSRM.GUI.reverseRouting;
-	document.getElementById("open-josm").onclick = OSRM.GUI.openJOSM;
-	document.getElementById("open-osmbugs").onclick = OSRM.GUI.openOSMBugs;
-	document.getElementById("option-highlight-nonames").onclick = OSRM.GUI.hightlightNonames;
-	document.getElementById("option-show-previous-routes").onclick = OSRM.GUI.showPreviousRoutes;
+	//document.getElementById("open-josm").onclick = OSRM.GUI.openJOSM;
+	//document.getElementById("open-osmbugs").onclick = OSRM.GUI.openOSMBugs;
+	//document.getElementById("option-highlight-nonames").onclick = OSRM.GUI.hightlightNonames;
+	//document.getElementById("option-show-previous-routes").onclick = OSRM.GUI.showPreviousRoutes;
 },
 
 // toggle GUI features that need a route to work
