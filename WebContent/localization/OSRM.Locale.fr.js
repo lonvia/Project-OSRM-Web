@@ -70,6 +70,10 @@ OSRM.Localization["fr"] = {
 "NO_ROUTE_SELECTED": "Pas d’itinéraire choisi",
 // routing engines
 "ENGINE_0": "voiture (le plus rapide)",
+"ENGINE_1": "vélo (en ville)",
+"ENGINE_2": "à pied",
+"ENGINE_3": "randonée",
+"ENGINE_4": "vélo (de randonée)",
 // directions
 "N": "nord",
 "E": "est",
