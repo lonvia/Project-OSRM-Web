@@ -110,6 +110,11 @@ OSRM.DEFAULTS = {
            url: 'http://ex4sy.t-i.ch/bicycle/{z}/{x}/{y}.png',
            attribution: 'Access overlay by <a href="http://osm.t-i.ch/bicycle/map/">t-i.ch</a>',
 	       options:{maxZoom: 17}
+        },
+        {  display_name: 'hill shading',
+           url: 'http://toolserver.org/~cmarqu/hill/{z}/{x}/{y}.png',
+           attribution: 'Hillshading by <a href="http://hikebikemap.de/">Hike&Bike Map</a>',
+	       options:{maxZoom: 17}
         }
     ],
 
