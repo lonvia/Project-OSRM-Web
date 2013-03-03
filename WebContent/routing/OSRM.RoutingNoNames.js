@@ -23,11 +23,9 @@ OSRM.RoutingNoNames = {
 		
 // displays route segments that are unnamed streets
 show: function(response) {
-	// do not display unnamed streets?
-	if( document.getElementById('option-highlight-nonames').checked == false) {
-		OSRM.G.route.hideUnnamedRoute();
-		return;
-	}
+	// do not display unnamed streets
+	OSRM.G.route.hideUnnamedRoute();
+	return;
 		
 	// mark geometry positions where unnamed/named streets switch
 	var named = [];
