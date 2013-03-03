@@ -42,6 +42,14 @@ OSRM.Localization["en"] = {
 "GUI_UNITS": "Units",
 "GUI_KILOMETERS": "Kilometers",
 "GUI_MILES": "Miles",
+// abbreviations
+"GUI_M": "m",
+"GUI_KM": "km",
+"GUI_MI": "mi",
+"GUI_FT": "ft",
+"GUI_H": "h",
+"GUI_MIN": "min",
+"GUI_S": "s",
 // mapping
 "GUI_MAPPING_TOOLS": "Mapping Tools",
 "GUI_HIGHLIGHT_UNNAMED_ROADS": "Highlight unnamed streets",
@@ -74,6 +82,17 @@ OSRM.Localization["en"] = {
 "ENGINE_2": "Foot",
 "ENGINE_3": "Hiking",
 "ENGINE_4": "Bike (touring)",
+// tile server names
+// (only required if names are different to OSRM.config)
+//"TILE_SERVER_0": "osm.org",
+//"TILE_SERVER_1": "osm.de",
+//"TILE_SERVER_2": "MapQuest",
+//"TILE_SERVER_3": "CloudMade",
+//"TILE_SERVER_4": "Bing Road",
+//"TILE_SERVER_5": "Bing Aerial",
+// overlay server names
+//(only required if names are different to OSRM.config)
+//"OVERLAY_SERVER_0": "Small Components",
 // directions
 "N": "north",
 "E": "east",
@@ -142,4 +161,4 @@ OSRM.Localization["en"] = {
 
 // set GUI language on load
 if( OSRM.DEFAULTS.LANUGAGE_ONDEMAND_RELOADING == true )
-	OSRM.Localization.setLanguage("en");
+	OSRM.Localization.setLanguage("en", true);

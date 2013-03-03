@@ -66,17 +66,16 @@ showRoute: function(response, parameters) {
 		OSRM.G.active_alternative = 0;
 	
 	OSRM.G.response = response;	// needed for printing & history routes!
+	OSRM.Routing._snapRoute();
 	if(response.status == 207) {
 		OSRM.RoutingGeometry.showNA();
 		OSRM.RoutingNoNames.showNA();
 		OSRM.RoutingDescription.showNA( OSRM.loc("NO_ROUTE_FOUND") );
-		OSRM.Routing._snapRoute();		
 	} else {
 		OSRM.RoutingAlternatives.prepare(OSRM.G.response);
 		OSRM.RoutingGeometry.show(OSRM.G.response);
 		OSRM.RoutingNoNames.show(OSRM.G.response);
 		OSRM.RoutingDescription.show(OSRM.G.response);
-		OSRM.Routing._snapRoute();
 	}
 	OSRM.Routing._updateHints(response);
 	if( parameters.recenter == true ) {		// allow recentering when the route is first shown
@@ -156,7 +155,7 @@ getRoute_Redraw: function(parameters) {
 	OSRM.JSONP.call(OSRM.Routing._buildCall()+'&instructions=true', OSRM.Routing.showRoute_Redraw, OSRM.Routing.timeoutRoute, OSRM.DEFAULTS.JSONP_TIMEOUT, 'redraw',parameters);
 },
 getRoute_Dragging: function() {
-	OSRM.G.pending = !OSRM.JSONP.call(OSRM.Routing._buildCall()+'&instructions=false', OSRM.Routing.showRoute_Dragging, OSRM.Routing.timeoutRoute_Dragging, OSRM.DEFAULTS.JSONP_TIMEOUT, 'dragging');;
+	OSRM.G.pending = !OSRM.JSONP.call(OSRM.Routing._buildCall()+'&alt=false&instructions=false', OSRM.Routing.showRoute_Dragging, OSRM.Routing.timeoutRoute_Dragging, OSRM.DEFAULTS.JSONP_TIMEOUT, 'dragging');;
 },
 draggingTimeout: function() {
 	OSRM.G.markers.route[OSRM.G.dragid].hint = null;

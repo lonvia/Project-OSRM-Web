@@ -46,7 +46,7 @@ call: function(marker_id, query) {
 	var call = OSRM.DEFAULTS.HOST_GEOCODER_URL + "format=json&json_callback=%jsonp" + OSRM.DEFAULTS.GEOCODER_BOUNDS + "&accept-language="+OSRM.Localization.current_language+"&limit=30&q=" + query;
 	// prioritize results in currently shown mapview
 	var bounds = OSRM.G.map.getBounds();
-	call += "&viewbox=" + bounds._southWest.lat + "," + bounds._northEast.lng + "," + bounds._northEast.lat + "," + bounds._southWest.lng;
+	call += "&viewbox=" + bounds._southWest.lng + "," + bounds._northEast.lat + "," + bounds._northEast.lng + "," + bounds._southWest.lat;
 	OSRM.JSONP.call( call, OSRM.Geocoder._showResults, OSRM.Geocoder._showResults_Timeout, OSRM.DEFAULTS.JSONP_TIMEOUT, "geocoder_"+marker_id, {marker_id:marker_id,query:query} );
 },
 
@@ -139,12 +139,14 @@ _showResults: function(response, parameters) {
 		"<div class='header-title'>"+OSRM.loc("SEARCH_RESULTS")+"</div>" +
 		"<div class='header-content'>("+OSRM.loc("FOUND_X_RESULTS").replace(/%i/,filtered_response.length)+")</div>";
 		"<div class='header-content'>(found "+filtered_response.length+" results)"+"</div>";
+	document.getElementById('information-box').className = 'information-box-with-normal-header';
 	document.getElementById('information-box').innerHTML = html;
 },
 _showResults_Empty: function(parameters) {
 	document.getElementById('information-box-header').innerHTML =
 		"<div class='header-title'>"+OSRM.loc("SEARCH_RESULTS")+"</div>" +
-		"<div class='header-content'>("+OSRM.loc("FOUND_X_RESULTS").replace(/%i/,0)+")</div>";		
+		"<div class='header-content'>("+OSRM.loc("FOUND_X_RESULTS").replace(/%i/,0)+")</div>";
+	document.getElementById('information-box').className = 'information-box-with-normal-header';
 	if(parameters.marker_id == OSRM.C.SOURCE_LABEL)
 		document.getElementById('information-box').innerHTML = "<div class='no-results big-font'>"+OSRM.loc("NO_RESULTS_FOUND_SOURCE")+": "+parameters.query +"</div>";
 	else if(parameters.marker_id == OSRM.C.TARGET_LABEL)
@@ -155,7 +157,8 @@ _showResults_Empty: function(parameters) {
 _showResults_Timeout: function() {
 	document.getElementById('information-box-header').innerHTML =
 		"<div class='header-title'>"+OSRM.loc("SEARCH_RESULTS")+"</div>" +
-		"<div class='header-content'>("+OSRM.loc("FOUND_X_RESULTS").replace(/%i/,0)+")</div>";		
+		"<div class='header-content'>("+OSRM.loc("FOUND_X_RESULTS").replace(/%i/,0)+")</div>";
+	document.getElementById('information-box').className = 'information-box-with-normal-header';
 	document.getElementById('information-box').innerHTML = "<div class='no-results big-font'>"+OSRM.loc("TIMED_OUT")+"</div>";	
 },
 
@@ -225,15 +228,24 @@ updateAddress: function(marker_id, do_fallback_to_lat_lng) {
 	// build request for reverse geocoder
 	var lat = null;
 	var lng = null;
+	var description = null;
 	
 	if(marker_id == OSRM.C.SOURCE_LABEL && OSRM.G.markers.hasSource()) {
 		lat = OSRM.G.markers.route[0].getLat();
 		lng = OSRM.G.markers.route[0].getLng();
+		description = OSRM.G.markers.route[0].description;
 	} else if(marker_id == OSRM.C.TARGET_LABEL && OSRM.G.markers.hasTarget() ) {
 		lat = OSRM.G.markers.route[OSRM.G.markers.route.length-1].getLat();
 		lng = OSRM.G.markers.route[OSRM.G.markers.route.length-1].getLng();
+		description = OSRM.G.markers.route[OSRM.G.markers.route.length-1].description;
 	} else
 		return;
+
+	// if a description is given show this and not the reverse geocoding information
+	if( description != null ) {
+		OSRM.Geocoder._showReverseResults( {address:{road:description} }, {marker_id:marker_id} );
+		return;
+	}
 	
 	var call = OSRM.DEFAULTS.HOST_REVERSE_GEOCODER_URL + "?format=json&json_callback=%jsonp" + "&accept-language="+OSRM.Localization.current_language + "&lat=" + lat.toFixed(6) + "&lon=" + lng.toFixed(6);
 	OSRM.JSONP.call( call, OSRM.Geocoder._showReverseResults, OSRM.Geocoder._showReverseResults_Timeout, OSRM.DEFAULTS.JSONP_TIMEOUT, "reverse_geocoder_"+marker_id, {marker_id:marker_id, do_fallback: do_fallback_to_lat_lng} );

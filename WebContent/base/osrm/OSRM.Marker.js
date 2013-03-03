@@ -23,6 +23,7 @@ or see http://www.gnu.org/licenses/agpl.txt.
 OSRM.Marker = function( label, style, position ) {
 	this.label = label ? label : "marker";
 	this.position = position ? position : new L.LatLng(0,0);
+	this.description = null;
 
 	this.marker = new L.LabelMarker( this.position, style );
 	this.marker.parent = this;
@@ -110,6 +111,7 @@ onDragStart: function(e) {
 	OSRM.GUI.deactivateTooltip( "DRAGGING" );	
 	OSRM.G.dragging = true;
 	this.changeIcon(this.options.dragicon);
+	this.parent.description = null;
 	
 	// store id of dragged marker
 	for( var i=0; i<OSRM.G.markers.route.length; i++)
@@ -155,6 +157,16 @@ OSRM.extend( OSRM.DragMarker, {
 onClick: function(e) {
 	if( this.parent != OSRM.G.markers.dragger)
 		this.parent.hide();
+	else {
+		var new_via_index = OSRM.Via.findViaIndex( e.target.getLatLng() );
+		OSRM.G.markers.route.splice(new_via_index+1,0, this.parent );
+		OSRM.RouteMarker.prototype.onDragStart.call(this,e);
+		
+		OSRM.G.markers.route[OSRM.G.dragid] = new OSRM.RouteMarker(OSRM.C.VIA_LABEL, {draggable:true,icon:OSRM.G.icons['marker-via'],dragicon:OSRM.G.icons['marker-via-drag']}, e.target.getLatLng() );
+		OSRM.G.markers.route[OSRM.G.dragid].show();
+		OSRM.RouteMarker.prototype.onDragEnd.call(this,e);
+		this.parent.hide();
+	}
 },
 onDragStart: function(e) {
 	var new_via_index = OSRM.Via.findViaIndex( e.target.getLatLng() );

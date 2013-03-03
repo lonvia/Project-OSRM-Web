@@ -21,6 +21,11 @@ or see http://www.gnu.org/licenses/agpl.txt.
 
 // onload initialization routine
 OSRM.init = function() {
+	if( OSRM.checkOldBrowser() == true )
+		return;
+	OSRM.showHTML();
+	
+	
 	OSRM.prefetchImages();
 	OSRM.prefetchIcons();
 	OSRM.prefetchCSSIcons();
@@ -32,12 +37,12 @@ OSRM.init = function() {
 	OSRM.RoutingAlternatives.init();
 	OSRM.Localization.init();	
 	
-	// stop if in maintenance mode
-	if( OSRM.GUI.inMaintenance() == true )
-		return;
-	
  	// check if the URL contains some GET parameter, e.g. for showing a route
  	OSRM.parseParameters();
+ 	
+	// stop if in maintenance mode (after parsing parameters to catch language settings)
+	if( OSRM.GUI.inMaintenance() == true )
+		return; 	
  
  	// only init default position / geolocation position if GET parameters do not specify a different one
  	if( OSRM.G.initial_position_override == false )
@@ -216,7 +221,24 @@ OSRM.prefetchCSSIcons = function() {
 };
 
 
-//parse URL GET parameters
+// check if an old browser was used and show the error message
+OSRM.checkOldBrowser = function() {
+	if( OSRM.Browser.IE6_7 == -1 )
+		return false;
+	
+	document.getElementById("old-browser-warning").style.display = "block";
+	return true;
+};
+
+
+// only show html content of website, if javascript is active 
+OSRM.showHTML = function() {
+	document.getElementById("map").style.display = "block";
+	document.getElementById("gui").style.display = "block";
+};
+
+
+// parse URL GET parameters
 OSRM.parseParameters = function(){
 	var called_url = document.location.search.substr(1,document.location.search.length);
 	
@@ -287,16 +309,20 @@ OSRM.parseParameters = function(){
 			params.active_routing_engine = active_routing_engine;
 		}
 	}
+	
+	// stop if in maintenance mode
+	if( OSRM.GUI.inMaintenance() == true )
+		return;	
 		
 	// case 1: destination given
 	if( params.destination ) {
 		var index = OSRM.G.markers.setTarget( params.destination );
 		if( params.destination_name )
-			document.getElementById("gui-input-target").value = params.destination_name;
+			OSRM.G.markers.route[index].description = params.destination_name;	// name in GUI will be set when languages are loaded
 		else 
 			OSRM.Geocoder.updateAddress( OSRM.C.TARGET_LABEL, OSRM.C.DO_FALLBACK_TO_LAT_LNG );
 		OSRM.G.markers.route[index].show();
-		OSRM.G.markers.route[index].centerView();
+		OSRM.G.markers.route[index].centerView( params.zoom );
 		OSRM.G.initial_position_override = true;
 		return;
 	}

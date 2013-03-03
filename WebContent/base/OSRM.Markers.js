@@ -76,20 +76,28 @@ removeMarker: function(id) {
 	if( id==0 && this.route[0].label == OSRM.C.SOURCE_LABEL ) {
 		this.removeVias();
 		document.getElementById('gui-input-source').value = "";
-		document.getElementById('information-box').innerHTML = "";
-		document.getElementById('information-box-header').innerHTML = "";
 		document.getElementById('gui-delete-source').style.visibility = "hidden";
+		OSRM.GUI.clearResults();
 	} else if( id == this.route.length-1 && this.route[ this.route.length-1 ].label == OSRM.C.TARGET_LABEL ) {
 		this.removeVias();
 		id = this.route.length-1;
 		document.getElementById('gui-input-target').value = "";
-		document.getElementById('information-box').innerHTML = "";
-		document.getElementById('information-box-header').innerHTML = "";
 		document.getElementById('gui-delete-target').style.visibility = "hidden";
+		OSRM.GUI.clearResults();
 	}
 	
 	this.route[id].hide();
 	this.route.splice(id, 1);
+},
+reverseDescriptions: function() {
+	var last = this.route.length-1;
+	var size = this.route.length / 2;
+	
+	for(var i=0; i<size; ++i) {
+		var temp = this.route[i].description;
+		this.route[i].description = this.route[last-i].description; 
+		this.route[last-i].description =  temp;
+	}
 },
 reverseMarkers: function() {
 	var size = this.route.length;
@@ -107,8 +115,7 @@ reverseMarkers: function() {
 		// reverse route
 		this.route.reverse();
 		// clear information (both delete markers stay visible)
-		document.getElementById('information-box').innerHTML = "";
-		document.getElementById('information-box-header').innerHTML = "";
+		OSRM.GUI.clearResults();
 		
 	// invert marker, if only one marker is shown (implicit clear of information / delete markers)
 	} else if( size > 0 ) {

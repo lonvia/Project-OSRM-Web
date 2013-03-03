@@ -41,11 +41,11 @@ OSRM.Localization["it"] = {
 "GUI_LANGUAGE": "Lingua",
 "GUI_UNITS": "Unità",
 "GUI_KILOMETERS": "Chilometri",
-"GUI_MILES": "Miles",
+"GUI_MILES": "Miglia",
 // mapping
 "GUI_MAPPING_TOOLS": "Strumenti per la Mappatura",
 "GUI_HIGHLIGHT_UNNAMED_ROADS": "Evidenzia strade senza nome",
-"GUI_SHOW_PREVIOUS_ROUTES": "Mostra le percorsi precedenti",
+"GUI_SHOW_PREVIOUS_ROUTES": "Mostra i percorsi precedenti",
 "OPEN_JOSM": "JOSM",
 "OPEN_OSMBUGS": "OSM Bugs",
 // geocoder
@@ -74,10 +74,10 @@ OSRM.Localization["it"] = {
 "E": "est",
 "S": "sud",
 "W": "ovest",
-"NE": "nordest",
-"SE": "sudest",
-"SW": "sudovest",
-"NW": "nordovest",
+"NE": "nor-dest",
+"SE": "sud-est",
+"SW": "sud-ovest",
+"NW": "nord-ovest",
 // driving directions
 // %s: road name
 // %d: direction
@@ -87,24 +87,24 @@ OSRM.Localization["it"] = {
 "DIRECTION_2":"Girare leggermente a destra[ su <b>%s</b>]",
 "DIRECTION_3":"Girare a destra[ su <b>%s</b>]",
 "DIRECTION_4":"Girare decisamente a destra[ su <b>%s</b>]",
-"DIRECTION_5":"Compire una inversione ad U[ su <b>%s</b>]",
+"DIRECTION_5":"Fare inversione a U[ su <b>%s</b>]",
 "DIRECTION_6":"Girare decisamente a sinistra[ su <b>%s</b>]",
 "DIRECTION_7":"Girare a sinistra[ su <b>%s</b>]",
 "DIRECTION_8":"Girare leggermente a sinistra[ su <b>%s</b>]",
 "DIRECTION_10":"Dirigersi a <b>%d</b>[ su <b>%s</b>]",
-"DIRECTION_11-1":"Immettersi nella rotonda ed abbandonarla alla prima uscita[ su <b>%s</b>]",
-"DIRECTION_11-2":"Immettersi nella rotonda ed abbandonarla alla seconda uscita[ su <b>%s</b>]",
-"DIRECTION_11-3":"Immettersi nella rotonda ed abbandonarla alla terza uscita[ su <b>%s</b>]",
-"DIRECTION_11-4":"Immettersi nella rotonda ed abbandonarla alla quarta uscita[ su <b>%s</b>]",
-"DIRECTION_11-5":"Immettersi nella rotonda ed abbandonarla alla quinta uscita[ su <b>%s</b>]",
-"DIRECTION_11-6":"Immettersi nella rotonda ed abbandonarla alla sesta uscita[ su <b>%s</b>]",
-"DIRECTION_11-7":"Immettersi nella rotonda ed abbandonarla alla settima uscita[ su <b>%s</b>]",
-"DIRECTION_11-8":"Immettersi nella rotonda ed abbandonarla alla ottava uscita[ su <b>%s</b>]",
-"DIRECTION_11-9":"Immettersi nella rotonda ed abbandonarla alla nona uscita[ su <b>%s</b>]",
-"DIRECTION_11-x":"Immettersi nella rotonda ed abbandonarla ad una delle tante uscite[ su <b>%s</b>]",
+"DIRECTION_11-1":"Immettersi nella rotonda e prendere la prima uscita[ su <b>%s</b>]",
+"DIRECTION_11-2":"Immettersi nella rotonda e prendere la seconda uscita[ su <b>%s</b>]",
+"DIRECTION_11-3":"Immettersi nella rotonda e prendere la terza uscita[ su <b>%s</b>]",
+"DIRECTION_11-4":"Immettersi nella rotonda e prendere la quarta uscita[ su <b>%s</b>]",
+"DIRECTION_11-5":"Immettersi nella rotonda e prendere la quinta uscita[ su <b>%s</b>]",
+"DIRECTION_11-6":"Immettersi nella rotonda e prendere la sesta uscita[ su <b>%s</b>]",
+"DIRECTION_11-7":"Immettersi nella rotonda e prendere la settima uscita[ su <b>%s</b>]",
+"DIRECTION_11-8":"Immettersi nella rotonda e prendere la ottava uscita[ su <b>%s</b>]",
+"DIRECTION_11-9":"Immettersi nella rotonda e prendere la nona uscita[ su <b>%s</b>]",
+"DIRECTION_11-x":"Immettersi nella rotonda e prendere una delle troppe uscite[ su <b>%s</b>]",
 "DIRECTION_15":"Hai raggiunto la tua destinazione"
 };
 
 // set GUI language on load
 if( OSRM.DEFAULTS.LANUGAGE_ONDEMAND_RELOADING == true )
-	OSRM.Localization.setLanguage("it");
+	OSRM.Localization.setLanguage("it", true);

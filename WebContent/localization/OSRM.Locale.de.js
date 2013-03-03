@@ -74,6 +74,17 @@ OSRM.Localization["de"] = {
 "ENGINE_2": "Fussgänger",
 "ENGINE_3": "Wanderer",
 "ENGINE_4": "Velo (Freizeit)",
+// tile server names
+// (only required if names are different to OSRM.config)
+//"TILE_SERVER_0": "osm.org",
+//"TILE_SERVER_1": "osm.de",
+//"TILE_SERVER_2": "MapQuest",
+//"TILE_SERVER_3": "CloudMade",
+"TILE_SERVER_4": "Bing Straßenkarte",
+"TILE_SERVER_5": "Bing Luftbilder",
+// overlay server names
+// (only required if names are different to OSRM.config)
+"OVERLAY_SERVER_0": "Kleine Komponenten",
 // directions
 "N": "Norden",
 "E": "Ost",
@@ -111,5 +122,5 @@ OSRM.Localization["de"] = {
 };
 
 // set GUI language on load
-if( OSRM.DEFAULTS.LANUGAGE_ONDEMAND_RELOADING==true )
-	OSRM.Localization.setLanguage("de");
+if( OSRM.DEFAULTS.LANUGAGE_ONDEMAND_RELOADING == true )
+	OSRM.Localization.setLanguage("de", true);

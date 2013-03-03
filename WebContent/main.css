@@ -31,6 +31,7 @@ html, body
 {
 	height: 100%;
 	z-index: 0;
+	display: none;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -49,6 +50,28 @@ html, body
 	text-align:center;
 	vertical-align:middle;	
 	font-size:9px;
+	display:none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* styles for error messages (browser too old / no javascript) */
+.error-header
+{
+	font-weight:bold;
+	margin: 20px 20px 10px 20px;
+}
+.error-body
+{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+#old-browser-warning
+{
+	display:none;
+}
+#gui
+{
 	display:none;
 }
 
@@ -232,10 +255,21 @@ html, body
 {
 	position:absolute;
 	bottom:20px;
-	top:65px;
 	width:380px;
 	overflow:auto;
 	margin:5px;
+}
+.information-box-with-normal-header
+{
+	top:65px;
+}
+.information-box-with-large-header
+{
+	top:85px;
+}
+.information-box-with-larger-header
+{
+	top:100px;
 }
 #legal-notice
 {
@@ -251,6 +285,12 @@ html, body
 {
 	font-weight:bold;
 	margin-bottom:10px;
+}
+.header-subtitle
+{
+	font-weight:normal;
+	margin-top:5px;
+	margin-left:10px;
 }
 .header-label
 {
@@ -632,7 +672,7 @@ html, body
 {
 	height: 0;
 	border-top: 1px solid #ddd;
-	margin: 5px -10px 5px -6px;
+	margin: 5px 0px 5px 0px;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -739,6 +779,12 @@ html, body
 {
 	min-width:10px;
 	min-height:10px;
+}
+.absolute-hidden
+{
+	position:absolute;
+	top:-1000px;
+	left:-1000px;
 }
 
 /* ------------------------------------------------------------------------ */

@@ -22,3 +22,11 @@ Necdet Varoglu (OSM-Comenius Project)
 Madalina Ionescu (OSM-Comenius Project)
 Luis Costa (OSM-Comenius Project)
 Tobias Johansson
+Madeco
+Yannis Gyftomitros
+Nodari Sitchinava
+Gia Jgarkava
+Knut Arne Bjørndal
+Serhij Dubyk
+naveenkumar
+Michal Palenik
