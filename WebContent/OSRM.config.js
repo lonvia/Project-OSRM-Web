@@ -30,9 +30,9 @@ OSRM.DEFAULTS = {
 	WEBSITE_URL: document.URL.replace(/#*(\?.*|$)/i,""),					// truncates URL before first ?, and removes tailing #
 	HOST_GEOCODER_URL: 'http://nominatim.openstreetmap.org/search',
 	HOST_REVERSE_GEOCODER_URL: 'http://nominatim.openstreetmap.org/reverse',
-	HOST_SHORTENER_URL: 'http://map.project-osrm.org/shorten/',
+	HOST_SHORTENER_URL: 'http://osm.li/get?',
 	
-	SHORTENER_PARAMETERS: '%url&jsonp=%jsonp',
+	SHORTENER_PARAMETERS: 'url=%url&jsonp=%jsonp',
 	SHORTENER_REPLY_PARAMETER: 'ShortURL',	
 	
 	ROUTING_ENGINE: 0,
