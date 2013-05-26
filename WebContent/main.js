@@ -327,6 +327,7 @@ OSRM.parseParameters = function(){
 		OSRM.G.markers.route[index].show();
 		OSRM.G.markers.route[index].centerView( params.zoom );
 		OSRM.G.initial_position_override = true;
+		OSRM.GUI.setRoutingEngine( params.active_routing_engine );
 		return;
 	}
 
