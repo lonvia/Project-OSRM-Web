@@ -350,25 +350,13 @@ OSRM.parseParameters = function(){
 	if( OSRM.GUI.inMaintenance() == true )
 		return;	
 		
-	// case 1: destination given
-	if( params.destination ) {
-		var index = OSRM.G.markers.setTarget( params.destination );
-		if( params.destination_name )
-			OSRM.G.markers.route[index].description = params.destination_name;	// name in GUI will be set when languages are loaded
-		else 
-			OSRM.Geocoder.updateAddress( OSRM.C.TARGET_LABEL, OSRM.C.DO_FALLBACK_TO_LAT_LNG );
-		OSRM.G.markers.route[index].show();
-		OSRM.G.markers.route[index].centerView( params.zoom );
-		OSRM.G.initial_position_override = true;
-		OSRM.GUI.setRoutingEngine( params.active_routing_engine );
-		return;
-	
 	// case 1: locations/destinations given (as strings)
 	if( params.locations || params.destinations ) {
 		var locations = params.destinations ? params.destinations : params.locations;
 		var callback = params.destinations ? "_showInitResults_Destinations" : "_showInitResults_Locations";
 		
 		OSRM.G.initial_positions = {};
+		OSRM.GUI.setRoutingEngine( params.active_routing_engine );
 		var data = OSRM.G.initial_positions;
 		data.positions = [];
 		data.done = 0;
@@ -391,7 +379,7 @@ OSRM.parseParameters = function(){
 				OSRM.Geocoder._showInitResults( [{lat:coord[0],lon:coord[1]} ], {id:id,callback:callback} );
 			} else {
 				OSRM.GUI.exclusiveNotify( OSRM.loc("NOTIFICATION_GEOCODERWAIT_HEADER"), OSRM.loc("NOTIFICATION_GEOCODERWAIT_BODY"), false );				
-				var call = OSRM.DEFAULTS.HOST_GEOCODER_URL + "?format=json&json_callback=%jsonp" + OSRM.DEFAULTS.GEOCODER_BOUNDS + "&accept-language="+OSRM.Localization.current_language+"&limit=1&q=" + query;
+				var call = OSRM.DEFAULTS.HOST_GEOCODER_URL + "format=json&json_callback=%jsonp" + OSRM.DEFAULTS.GEOCODER_BOUNDS + "&accept-language="+OSRM.Localization.current_language+"&limit=1&q=" + query;
 				OSRM.JSONP.call( call, OSRM.Geocoder._showInitResults, OSRM.Geocoder._showInitResults, OSRM.DEFAULTS.JSONP_TIMEOUT, "init_geocoder_"+id, {id:id,callback:callback} );
 			}
 		}

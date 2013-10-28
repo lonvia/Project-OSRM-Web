@@ -98,6 +98,7 @@ OSRM.DEFAULTS = {
 			attribution:'Map data &copy; 2011 OpenStreetMap contributors under <a ref="http://www.openstreetmap.org/copyright">ODbL</a>',
 			options:{maxZoom: 18}
 		}
+    ],
     OVERLAY_SERVERS: [
         {  display_name: 'hiking routes',
            url: 'http://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png',
