@@ -67,6 +67,9 @@ OSRM.DEFAULTS = {
 	ZOOM_LEVEL: 14,
 	HIGHLIGHT_ZOOM_LEVEL: 16,
 	JSONP_TIMEOUT: 10000,
+	EDITOR_MIN_ZOOM_LEVEL: 16,
+	JOSM_MIN_ZOOM_LEVEL: 16,	
+	NOTES_MIN_ZOOM_LEVEL: 8,
 	
 	ONLOAD_ZOOM_LEVEL: 9,
 	ONLOAD_LATITUDE: 47.20,
@@ -95,7 +98,6 @@ OSRM.DEFAULTS = {
 			attribution:'Map data &copy; 2011 OpenStreetMap contributors under <a ref="http://www.openstreetmap.org/copyright">ODbL</a>',
 			options:{maxZoom: 18}
 		}
-	],
     OVERLAY_SERVERS: [
         {  display_name: 'hiking routes',
            url: 'http://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png',

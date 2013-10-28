@@ -109,6 +109,11 @@ initPosition: function() {
 
 // map event handlers
 zoomed: function(e) {
+	// prevent redraw when zooming out less than 4 levels (no need to reduce route geometry data)
+	var delta_zoom = OSRM.G.route.getZoomLevel() - OSRM.G.map.getZoom(); 
+	if( delta_zoom >= 0 && delta_zoom <= 3 ) 
+		return;
+	// redraw routes
 	if(OSRM.G.dragging)
 		OSRM.Routing.getRoute_Dragging();
 	else
@@ -117,7 +122,9 @@ zoomed: function(e) {
 contextmenu: function(e) {;},
 mousemove: function(e) { OSRM.Via.drawDragMarker(e); },
 click: function(e) {
-	OSRM.GUI.deactivateTooltip( "CLICKING" );	
+	OSRM.GUI.deactivateTooltip( "CLICKING" );
+	if( e.originalEvent.shiftKey==true || e.originalEvent.metaKey==true || e.originalEvent.altKey==true )	// only create/remove markers on simple clicks
+		return;
 	if( !OSRM.G.markers.hasSource() ) {
 		var index = OSRM.G.markers.setSource( e.latlng );
 		OSRM.Geocoder.updateAddress( OSRM.C.SOURCE_LABEL, OSRM.C.DO_FALLBACK_TO_LAT_LNG );

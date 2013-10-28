@@ -31,3 +31,7 @@ Serhij Dubyk
 naveenkumar
 Michal Palenik
 Sarah Hoffmann
+Joan Montané
+Paul Schulz
+alexeionin
+Tim Morley
