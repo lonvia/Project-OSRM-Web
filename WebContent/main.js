@@ -356,6 +356,7 @@ OSRM.parseParameters = function(){
 		var callback = params.destinations ? "_showInitResults_Destinations" : "_showInitResults_Locations";
 		
 		OSRM.G.initial_positions = {};
+		OSRM.GUI.setRoutingEngine( params.active_routing_engine );
 		var data = OSRM.G.initial_positions;
 		data.positions = [];
 		data.done = 0;
