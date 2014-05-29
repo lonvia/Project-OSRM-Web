@@ -52,50 +52,49 @@ OSRM.DEFAULTS = {
             fixspeed: 4.5
 		}
 	],
-	
+
 	WEBSITE_URL: document.URL.replace(/#*(\?.*|$)/i,""),					// truncates URL before first ?, and removes tailing #
-	HOST_GEOCODER_URL: 'http://nominatim.openstreetmap.org/search?countrycodes=ch&',
-	HOST_REVERSE_GEOCODER_URL: 'http://nominatim.openstreetmap.org/reverse',
-	HOST_SHORTENER_URL: 'http://osm.li/get?',
-	
+	HOST_GEOCODER_URL: 'https://nominatim.openstreetmap.org/search?countrycodes=ch&',
+	HOST_REVERSE_GEOCODER_URL: 'https://nominatim.openstreetmap.org/reverse',
+	HOST_SHORTENER_URL: 'http://osm.li/get?',				// use '' to not use url shortener service
+
 	SHORTENER_PARAMETERS: 'url=%url&jsonp=%jsonp',
-	SHORTENER_REPLY_PARAMETER: 'ShortURL',	
-	
+	SHORTENER_REPLY_PARAMETER: 'ShortURL',									// keep set, even if not using url shortener service!
+
 	ROUTING_ENGINE: 1,
 	DISTANCE_FORMAT: 0,														// 0: km, 1: miles
-	GEOCODER_BOUNDS: '',	
+	GEOCODER_BOUNDS: '',
 	ZOOM_LEVEL: 14,
 	HIGHLIGHT_ZOOM_LEVEL: 16,
 	JSONP_TIMEOUT: 10000,
 	EDITOR_MIN_ZOOM_LEVEL: 16,
-	JOSM_MIN_ZOOM_LEVEL: 16,	
+	JOSM_MIN_ZOOM_LEVEL: 16,
 	NOTES_MIN_ZOOM_LEVEL: 8,
-	
 	ONLOAD_ZOOM_LEVEL: 9,
 	ONLOAD_LATITUDE: 47.20,
 	ONLOAD_LONGITUDE: 8.50,
 	ONLOAD_SOURCE: "",
 	ONLOAD_TARGET: "",
-	
+
 	LANGUAGE: "en",
 	LANGUAGE_USE_BROWSER_SETTING: true,
 	LANUGAGE_ONDEMAND_RELOADING: true,
-	LANGUAGE_SUPPORTED: [ 
+	LANGUAGE_SUPPORTED: [
 		{encoding:"en", name:"English"},
 		{encoding:"de", name:"Deutsch"},
 		{encoding:"fr", name:"Français"},
 		{encoding:"it", name:"Italiano"}
 	],
-		
+
 	TILE_SERVERS: [
 		{	display_name: 'osm.org',
 			url:'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-			attribution:'Map data &copy; 2011 OpenStreetMap contributors under <a ref="http://www.openstreetmap.org/copyright">ODbL</a>',
+			attribution:'Map data &copy; OpenStreetMap contributors under <a ref="http://www.openstreetmap.org/copyright">ODbL</a>',
 			options:{maxZoom: 18}
 		},
 		{	display_name: 'osm.de',
 			url:'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
-			attribution:'Map data &copy; 2011 OpenStreetMap contributors under <a ref="http://www.openstreetmap.org/copyright">ODbL</a>',
+			attribution:'Map data &copy; OpenStreetMap contributors under <a ref="http://www.openstreetmap.org/copyright">ODbL</a>',
 			options:{maxZoom: 18}
 		}
     ],
