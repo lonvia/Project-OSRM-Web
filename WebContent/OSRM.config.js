@@ -88,12 +88,12 @@ OSRM.DEFAULTS = {
 
 	TILE_SERVERS: [
 		{	display_name: 'standard',
-			url:'http://tile.osm.ch/switzerland/{z}/{x}/{y}.png',
+			url:'//tile.osm.ch/switzerland/{z}/{x}/{y}.png',
 			attribution:'Map data &copy; OpenStreetMap contributors under <a ref="http://www.openstreetmap.org/copyright">ODbL</a>',
 			options:{maxZoom: 18}
         },
 		{	display_name: 'swiss style',
-			url:'http://tile.osm.ch/osm-swiss-style/{z}/{x}/{y}.png',
+			url:'//tile.osm.ch/osm-swiss-style/{z}/{x}/{y}.png',
 			attribution:'Map data &copy; OpenStreetMap contributors under <a ref="http://www.openstreetmap.org/copyright">ODbL</a>',
 			options:{maxZoom: 18}
         },
