@@ -189,7 +189,7 @@ OSRM.Localization["en"] = {
 "NOTIFICATION_GEOCODERFAIL_HEADER":	"Geocoder Failure",
 "NOTIFICATION_GEOCODERFAIL_BODY":	"Failed to retrieve coordinates from geocoder.",
 // do not translate below this line
-"GUI_LEGAL_NOTICE": "routing powered by <a href='http://project-osrm.org'>OSRM</a> - GUI based on <a href='https://github.com/DennisSchiefer/Project-OSRM-Web'>OSRM Webinterface</a> - Geocoding by <a href='http://wiki.openstreetmap.org/wiki/Nominatim'>Nominatim</a>",
+"GUI_LEGAL_NOTICE": "routing powered by <a href='http://project-osrm.org'>OSRM</a> - GUI based on <a href='https://github.com/DennisSchiefer/Project-OSRM-Web'>OSRM Webinterface</a> - Geocoding by <a href='http://wiki.openstreetmap.org/wiki/Nominatim'>Nominatim</a> - <a href='//osm.ch/contact.html'>Operated by SOSM, contact/imprint</a> - <a href='//sosm.ch/about/terms-of-service/'>Terms of service and privacy</a>",
 "GUI_DATA_TIMESTAMP": "data: ",
 "GUI_VERSION": "gui: ",
 "QR": "QR"
